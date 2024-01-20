@@ -6,6 +6,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    name = request.args["name"]
-    return render_template("index.html", placeholder = name)
+    if "name" in request.args:
+        name = request.args["name"]
+
+    else:
+        name = "world"
+    return render_template("index.html", placeholder=name)
 
