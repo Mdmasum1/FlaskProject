@@ -9,5 +9,5 @@ def index():
     name = request.args.get("name", "world")
     #name = request.args["name"]
     
-    return render_template("index.html", placeholder=name)
+    return render_template("index.html", name=name)
 
